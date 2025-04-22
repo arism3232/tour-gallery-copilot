@@ -1,9 +1,17 @@
+/* Add a light blue background to the main screen */
+body {
+  background-color: #e6f7ff; /* Light blue */
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+
 /* Root container styling */
 #root {
   max-width: 1280px;
   margin: 0 auto;
   padding: 2rem;
   text-align: center;
+  background-color: #e6f7ff; /* Ensure consistency */
 }
 
 /* App-specific styles */
