@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import './App.css';
 import Gallery from './components/Gallery';
 
 const App = () => {
@@ -43,7 +44,7 @@ const App = () => {
     return (
       <div style={{ textAlign: 'center', marginTop: '20px' }}>
         <h2>No Tours Left</h2>
-        <button onClick={fetchTours} style={styles.refreshButton}>
+        <button onClick={fetchTours} className="refresh-button">
           Refresh
         </button>
       </div>
@@ -56,18 +57,6 @@ const App = () => {
       <Gallery tours={tours} onRemove={onRemove} />
     </div>
   );
-};
-
-const styles = {
-  refreshButton: {
-    backgroundColor: '#4caf50',
-    color: '#fff',
-    border: 'none',
-    padding: '10px 20px',
-    borderRadius: '5px',
-    cursor: 'pointer',
-    fontSize: '16px',
-  },
 };
 
 export default App;
