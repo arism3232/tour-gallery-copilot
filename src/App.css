@@ -26,6 +26,7 @@ h2 {
   color: #555;
 }
 
+/* Refresh button styling */
 .refresh-button {
   background-color: #4caf50;
   color: #fff;
@@ -123,6 +124,7 @@ h2 {
   margin: 8px 0;
 }
 
+/* Show More button styling */
 .show-more-button {
   background: none;
   border: none;
@@ -137,6 +139,7 @@ h2 {
   color: #0056b3;
 }
 
+/* Not Interested button styling */
 .not-interested-button {
   background-color: #ff4d4d;
   color: #fff;
