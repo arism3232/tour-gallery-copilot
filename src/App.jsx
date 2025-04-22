@@ -36,7 +36,7 @@ const App = () => {
   }
 
   if (error) {
-    return <h2>Error: {error}</h2>;
+    return <h2>Error: {error}</h2>; // Task4 was already done along with Task3
   }
 
   return (
