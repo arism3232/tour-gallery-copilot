@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import './App.css';
 import Gallery from './components/Gallery';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const App = () => {
   // State to store tours data
@@ -35,7 +37,15 @@ const App = () => {
 
   // Function to remove a tour by its ID
   const onRemove = (id) => {
+    const tour = tours.find((tour) => tour.id === id);
+    if (tour) {
+      handleRemove(tour.name);
+    }
     setTours(tours.filter((tour) => tour.id !== id)); // Filter out the removed tour
+  };
+
+  const handleRemove = (tourName) => {
+    toast.error(`${tourName} removed from the list!`);
   };
 
   // Show loading message while data is being fetched
@@ -65,6 +75,7 @@ const App = () => {
     <div>
       <h1>Tours</h1>
       <Gallery tours={tours} onRemove={onRemove} />
+      <ToastContainer />
     </div>
   );
 };

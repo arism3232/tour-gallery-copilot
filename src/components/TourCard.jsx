@@ -5,9 +5,15 @@ const TourCard = ({ tour, onRemove }) => {
   const { id, name, info, image, price } = tour; // Destructure tour properties
   const [showMore, setShowMore] = useState(false); // State to toggle "Show More" / "Show Less"
   const [isFavorited, setIsFavorited] = useState(false); // State to track if the location is favorited
+  const [isRemoving, setIsRemoving] = useState(false); // State to track if the tour is being removed
+
+  const handleRemove = () => {
+    setIsRemoving(true);
+    setTimeout(() => onRemove(id), 500); // Delay removal to allow animation
+  };
 
   return (
-    <div className="tour-card">
+    <div className={`tour-card ${isRemoving ? 'removing' : ''}`}>
       {/* Display tour image */}
       <img src={image} alt={name} />
       <div>
@@ -33,7 +39,7 @@ const TourCard = ({ tour, onRemove }) => {
           {isFavorited ? '❤️' : '🤍'}
         </button>
         {/* Button to remove the tour */}
-        <button className="not-interested-button" onClick={() => onRemove(id)}>
+        <button className="not-interested-button" onClick={handleRemove}>
           Not Interested
         </button>
       </div>
