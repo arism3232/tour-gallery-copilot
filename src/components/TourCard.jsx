@@ -4,6 +4,7 @@ import React, { useState } from 'react';
 const TourCard = ({ tour, onRemove }) => {
   const { id, name, info, image, price } = tour; // Destructure tour properties
   const [showMore, setShowMore] = useState(false); // State to toggle "Show More" / "Show Less"
+  const [isFavorited, setIsFavorited] = useState(false); // State to track if the location is favorited
 
   return (
     <div className="tour-card">
@@ -23,6 +24,14 @@ const TourCard = ({ tour, onRemove }) => {
             {showMore ? 'Show Less' : 'Show More'}
           </button>
         </p>
+        {/* Heart button to favorite the location */}
+        <button
+          className={`heart-button ${isFavorited ? 'favorited' : ''}`}
+          onClick={() => setIsFavorited(!isFavorited)}
+          aria-label="Favorite"
+        >
+          {isFavorited ? '❤️' : '🤍'}
+        </button>
         {/* Button to remove the tour */}
         <button className="not-interested-button" onClick={() => onRemove(id)}>
           Not Interested

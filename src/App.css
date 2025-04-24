@@ -160,3 +160,21 @@ h2 {
 .not-interested-button:hover {
   background-color: #e63939;
 }
+
+/* Heart button styling */
+.heart-button {
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  margin-right: 8px;
+  transition: transform 0.2s ease;
+}
+
+.heart-button:hover {
+  transform: scale(1.2); /* Slightly enlarge the heart on hover */
+}
+
+.heart-button.favorited {
+  color: red; /* Highlight the heart when favorited */
+}
